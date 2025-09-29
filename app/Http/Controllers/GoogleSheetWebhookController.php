@@ -7,6 +7,16 @@ use Illuminate\Http\Request;
 
 class GoogleSheetWebhookController extends Controller
 {
+
+    public function getAll(){
+        $testimoni = Testimoni::all();
+
+        return response()->json([
+            'success' => true,
+            'data'    => $testimoni,
+        ]);
+    }
+
      public function store(Request $request)
     {
         $validated = $request->validate([
